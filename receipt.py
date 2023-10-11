@@ -54,11 +54,11 @@ def generate_pdf():
     pdf.image('logo2.png', 15, 15,80,20)
 
     pdf.set_font('Times', 'B', 14)
-    pdf.text(120,15,"Invoice - Account Summary")
+    pdf.text(120,15,"Invoice")
 
     pdf.set_font('Times', '', 9)
 
-    pdf.text(120,20,"Hankar Way,Richmond,TX77407 United States")
+    pdf.text(120,20,"17503 Hankar Way,Richmond,TX77407 United States")
     # pdf.text(122,22,"")
     pdf.text(120,24,"+1(346) 558-3658")
     pdf.text(120,28,"orionventuresgroupllc@gmail.com")
@@ -66,7 +66,7 @@ def generate_pdf():
 
     j=45
     pdf.set_font('Times', 'B', 12)
-    pdf.text(10,j,"User Details")
+    pdf.text(10,j,"Customer Details")
     pdf.set_font('Times', '', 11)
     pdf.text(10,j+5 ,"Name : " +event.get("booking_details")['primary_driver'] )
     pdf.text(10,j+10,"Pickup : "+ event.get('booking_details')['pick_up_location'])
@@ -74,7 +74,7 @@ def generate_pdf():
     pdf.text(10,j+21,"Car Name : " + event.get('car_details')['name'] +" / "+ event.get('car_details')['type'] +" / "+ event.get('car_details')['model_year'] +" / "+ str(1 if event.get('car_details')['sitting_capacity']==None else event.get('car_details')['sitting_capacity'])+" Passengers")
     pdf.set_font('Times', 'B', 12)
     
-    pdf.text(120,j,"Journey Details")
+    pdf.text(120,j,"Booking Details")
     pdf.set_font('Times', '', 11)
     pdf.text(120,j+5 ,"Booking Id : " +event.get("booking_id"))
     pdf.text(120,j+10,"Pickup Date-Time :  "+ event.get('booking_details')['trip_start_date_time'])
